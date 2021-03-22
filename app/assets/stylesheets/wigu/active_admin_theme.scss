@@ -1,17 +1,29 @@
 //VAR-----------------------------------------------------------------------------------------------------------------//
 
 $skinMainFirstColor: #23282f!default;
+$skinMainFirstColorLighten1: lighten($skinMainFirstColor, 8%)!default;
+$skinMainFirstColorLighten2: lighten($skinMainFirstColor, 15%)!default;
+$skinMainFirstColorLighten3: lighten($skinMainFirstColor, 30%)!default;
 $skinMainSecondColor: #5ea3d3!default;
+$skinMainSecondColorLighten1: lighten($skinMainFirstColor, 5%)!default;
+$skinMainSecondColorLighten2: lighten($skinMainFirstColor, 20%)!default;
+$skinMainSecondColorLighten3: lighten($skinMainFirstColor, 30%)!default;
 $skinBorderRadius: 4px!default;
 $skinBorderWindowColor: #e6e9ee!default;
+$skinBorderWindowColorDarken1: darken($skinBorderWindowColor, 5%)!default;
 $skinTablePadding: 10px!default;
+$skinBackgroundColor: #f7f9fb!default;
+$skinBaseFontSize: 11px;  // 1.0rem
+$skinTitleFontSize: 1.091rem;  // 12px
+$skinHeaderFontSize: 1.455rem;  // 16px
+
 //HTML----------------------------------------------------------------------------------------------------------------//
 
 html {
-  background: #f7f9fb;
+  background: $skinBackgroundColor;
 }
 body.active_admin {
-  background: #f7f9fb;
+  background: $skinBackgroundColor;
 }
 #wrapper {
   div.tabs {
@@ -57,14 +69,14 @@ body.active_admin {
   }
   #header {
     background-color: $skinMainFirstColor;
-    border-bottom: 1px solid lighten( $skinMainFirstColor, 15% )!important;
+    border-bottom: 1px solid $skinMainFirstColorLighten2!important;
     padding-bottom: 9px;
     border: none;
     text-shadow: none;
     background-image: none;
     h1.site_title {
       color: $skinMainSecondColor;
-      font-size: 16px;
+      font-size: $skinHeaderFontSize;
     }
     a, a:link {
       color: #ffffff;
@@ -112,16 +124,16 @@ body.active_admin {
     background-image: none;
     border: none;
     box-shadow: none;
-    background-color: lighten( $skinMainFirstColor, 8% );
+    background-color: $skinMainFirstColorLighten1;
     border: none;
     border-bottom: 3px solid $skinMainSecondColor;
     #titlebar_left {
       span.breadcrumb {
-        font-size: 12px;
+        font-size: $skiTitleFontSize;
         text-shadow: none;
         margin-bottom: 8px;
         a, span {
-          color: lighten( $skinMainFirstColor, 30% )!important; ;
+          color: $skinMainFirstColorLighten3;
         }
       }
       h2 {
@@ -142,7 +154,7 @@ body.active_admin {
         color: #ffffff;
         font-weight: 600;
         &:hover {
-          background-color: lighten( $skinMainSecondColor, 5% )!important;
+          background-color: $skinMainSecondColorLighten1!important;
         }
       }
       div.dropdown_menu {
@@ -182,7 +194,7 @@ body.active_admin {
           padding: 10px 20px;
           color: #ffffff;
           &:hover {
-            background-color: lighten( $skinMainSecondColor, 5% );
+            background-color: $skinMainSecondColorLighten1;
           }
         }
       }
@@ -210,7 +222,7 @@ body.active_admin {
   }
   #active_admin_content {
     span.blank_slate {
-      border: 2px solid lighten( $skinMainSecondColor, 30% );
+      border: 2px solid $skinMainSecondColorLighten3;
       color: #8494a8;
       @include rounded($skinBorderRadius);
     }
@@ -253,7 +265,7 @@ body.active_admin {
           padding: 10px 20px;
           color: #ffffff;
           &:hover {
-            background-color: lighten( $skinMainSecondColor, 5% );
+            background-color: $skinMainSecondColorLighten1;
           }
         }
       }
@@ -294,7 +306,7 @@ body.active_admin {
           text-shadow: none;
           box-shadow: none;
           &:hover {
-            background-color: lighten( $skinMainSecondColor, 5% );
+            background-color: $skinMainSecondColorLighten1;
             box-shadow: none;
           }
         }
@@ -312,7 +324,7 @@ body.active_admin {
             border-right: 1px solid #ffffff;
             span {
               color: #ffffff;
-              font-size: 11px;
+              font-size: $skinBaseFontSize;
               font-weight: bold;
             }
           }
@@ -339,7 +351,7 @@ body.active_admin {
         }
         li.selected {
           a {
-            background-color: lighten( $skinMainSecondColor, 15% );
+            background-color: $skinMainSecondColorLighten2;
           }
         }
       }
@@ -355,14 +367,14 @@ body.active_admin {
       border: none;
       box-shadow: none;
       text-shadow: none;
-      font-size: 1.0em;
+      font-size: $skinBaseFontSize;
       font-weight: bold;
       background-color: $skinBorderWindowColor;
       padding: $skinTablePadding 12px $skinTablePadding 12px;
-      border-bottom: 3px solid darken( $skinBorderWindowColor, 5% );
-      border-right: 1px solid darken( $skinBorderWindowColor, 5% );
+      border-bottom: 3px solid $skinBorderWindowColorDarken1;
+      border-right: 1px solid $skinBorderWindowColorDarken1;
       a {
-        font-size: 1.0em;
+        font-size: $skinBaseFontSize;
         font-weight: bold!important;
       }
     }
@@ -408,7 +420,7 @@ body.active_admin {
         background-color: #fdfefe;
       }
       input:focus {
-        border-color: lighten( $skinMainSecondColor, 20% ) ;
+        border-color: $skinMainSecondColorLighten2 ;
         box-shadow: none;
       }
     }
@@ -431,7 +443,7 @@ form input[type=submit], a.button, a:link.button, a:visited.button, fieldset.act
   color: #ffffff;
   &:hover {
     background-image: none!important;
-    background-color: lighten( $skinMainSecondColor, 5% )!important;
+    background-color: $skinMainSecondColorLighten1!important;
   }
 }
 form fieldset.buttons li.cancel a, form fieldset.actions li.cancel a, form.filter_form a.clear_filters_btn {
@@ -484,7 +496,7 @@ form fieldset.inputs {
       background-color: #fdfefe;
     }
     input:focus, textarea:focus {
-      border-color: lighten( $skinMainSecondColor, 20% ) ;
+      border-color: $skinMainSecondColorLighten2;
       box-shadow: none;
     }
   }
@@ -517,7 +529,7 @@ form fieldset.inputs {
     thead {
       tr {
         th {
-          background-color:lighten( $skinMainSecondColor, 20% );
+          background-color: $skinMainSecondColorLighten2;
         }
       }
     }
@@ -703,7 +715,7 @@ form fieldset > ol > li fieldset ol li {
           @include rounded($skinBorderRadius);
           width: 247px;
           &:focus {
-            border-color: lighten( $skinMainSecondColor, 20% ) ;
+            border-color: $skinMainSecondColorLighten2;
             box-shadow: none;
           }
         }
@@ -725,7 +737,7 @@ form fieldset > ol > li fieldset ol li {
         padding: 10px 20px;
         &:hover {
           background-image: none!important;
-          background-color: lighten( $skinMainSecondColor, 5% )!important;
+          background-color: $skinMainSecondColorLighten1!important;
         }
       }
       button:last-child {
